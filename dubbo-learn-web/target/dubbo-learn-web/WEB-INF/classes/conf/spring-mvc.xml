@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.2.xsd">
+
+  <!--配置 Controller 注解扫描包, 并且只扫描 @Controller 注解 -->
+
+  <!--配置controller 参数自动注入 -->
+  <mvc:annotation-driven/>
+
+  <context:component-scan base-package="dubbo.learn.web.controller" use-default-filters="false">
+    <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+    <context:include-filter expression="org.springframework.web.bind.annotation.ControllerAdvice" type="annotation"/>
+  </context:component-scan>
+
+  <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+    <!-- 日期格式 -->
+    <property name="dateFormat">
+      <bean class="java.text.SimpleDateFormat">
+        <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
+      </bean>
+    </property>
+    <!-- json field 形式 -->
+    <property name="propertyNamingStrategy">
+      <bean class="com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy"/>
+    </property>
+
+  </bean>
+
+
+  <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+
+    <property name="supportedMediaTypes">
+      <list>
+        <value>text/html; charset=UTF-8</value>
+        <value>application/json;charset=UTF-8</value>
+      </list>
+    </property>
+
+    <property name="ObjectMapper" ref="objectMapper"/>
+    <property name="prettyPrint" value="true"/>
+
+  </bean>
+
+  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    <property name="messageConverters">
+      <list>
+        <ref bean="mappingJackson2HttpMessageConverter"/>
+      </list>
+    </property>
+  </bean>
+
+
+</beans>
