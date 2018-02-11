@@ -15,6 +15,11 @@
     <jackson.version>2.9.4</jackson.version>
     <jdk.version>1.8</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <hibernate.version>5.2.3.Final</hibernate.version>
+    <maven.compile.version>3.1</maven.compile.version>
+    <maven.jar.version>3.0.0</maven.jar.version>
+    <maven.dependency.version>3.0.0</maven.dependency.version>
+    <dbcp.version>2.2.0</dbcp.version>
   </properties>
   <dependencies>
     <dependency>
@@ -118,7 +123,28 @@
         <version>${spring.version}</version>
       </dependency>
 
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
 
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
+        <scope>test</scope>
+      </dependency>
 
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -163,6 +189,26 @@
       </dependency>
 
 
+      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>${hibernate.version}</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>${hibernate.version}</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-dbcp2</artifactId>
+        <version>${dbcp.version}</version>
+      </dependency>
 
     </dependencies>
 
@@ -175,6 +221,7 @@
     <module>dubbo-learn-api</module>
     <module>dubbo-learn-entity</module>
     <module>dubbo-learn-web</module>
+    <module>dubbo-learn-repository</module>
   </modules>
 
   <build>
@@ -183,7 +230,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
+        <version>${maven.compile.version}</version>
         <configuration>
           <source>${jdk.version}</source>
           <target>${jdk.version}</target>
@@ -192,6 +239,28 @@
         </configuration>
       </plugin>
     </plugins>
+
+
+    <pluginManagement>
+
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven.jar.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${maven.dependency.version}</version>
+        </plugin>
+
+      </plugins>
+
+    </pluginManagement>
+
+
 
 
   </build>
