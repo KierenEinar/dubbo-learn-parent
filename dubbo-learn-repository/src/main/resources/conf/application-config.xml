@@ -12,17 +12,7 @@
 		"
        default-lazy-init="false">
 
-
-    <beans profile="dev">
-        <context:property-placeholder location="classpath*:prop/dev/*.properties"/>
-    </beans>
-
-    <beans profile="test">
-        <context:property-placeholder location="classpath*:prop/test/*.properties"/>
-    </beans>
-
-    <beans profile="prod">
-        <context:property-placeholder location="classpath*:prop/prod/*.properties"/>
-    </beans>
-
+       <beans profile="dev">
+            <context:property-placeholder location="classpath*:prop/dev/*.properties"/>
+       </beans>
 </beans>

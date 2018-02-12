@@ -30,45 +30,41 @@
   <build>
 
     <plugins>
+      <!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
+          <classesDirectory>target/classes/</classesDirectory>
           <archive>
             <manifest>
-              <!-- 指定Main方法入口的class -->
               <mainClass>dubbo.learn.provider.App</mainClass>
-              <!-- 在jar包的MANIFEST.MF文件中生成Class-Path属性 -->
+              <!-- 打包时 MANIFEST.MF文件不记录的时间戳版本 -->
+              <useUniqueVersions>false</useUniqueVersions>
               <addClasspath>true</addClasspath>
-              <!-- Class-Path 前缀 -->
               <classpathPrefix>lib/</classpathPrefix>
             </manifest>
-            <!-- 把本地的第三方jar包添加到MANIFEST.MF文件中,可以解压打包后的jar包查看MANIFEST.MF文件 -->
-            <!--
-            Class-Path: 指定当前jar包执行所依赖的classpath,包括本地的第三方jar包和maven引入的jar包
-            Class-Path: lib/slf4j-api-1.7.13.jar lib/junit-3.8.1.jar
-            Main-Class: 指定当前jar包的入口class
-            Main-Class: com.birdben.App
-            -->
-            <!--<manifestEntries>-->
-              <!--<Class-Path>lib/slf4j-api-1.7.13.jar</Class-Path>-->
-            <!--</manifestEntries>-->
+            <manifestEntries>
+              <Class-Path>.</Class-Path>
+            </manifestEntries>
           </archive>
         </configuration>
       </plugin>
-      <!-- 拷贝依赖的jar包到lib目录 -->
+
+      <!-- 把依赖的jar包,打成一个lib文件夹 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>copy</id>
+            <id>copy-dependencies</id>
             <phase>package</phase>
             <goals>
               <goal>copy-dependencies</goal>
             </goals>
             <configuration>
-              <!-- ${project.build.directory} 构建目录，缺省为target -->
+              <type>jar</type>
+              <includeTypes>jar</includeTypes>
               <outputDirectory>
                 ${project.build.directory}/lib
               </outputDirectory>

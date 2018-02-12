@@ -10,5 +10,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AdminRepository extends AbstractRepository <Admin, Long> {
 
-
 }

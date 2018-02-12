@@ -1,2 +1,3 @@
 dubbo/learn/provider/App.class
-dubbo/learn/provider/service/UserServiceImpl.class
+dubbo/learn/provider/service/admin/AdminServiceImpl.class
+dubbo/learn/provider/service/user/UserServiceImpl.class

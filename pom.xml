@@ -20,6 +20,8 @@
     <maven.jar.version>3.0.0</maven.jar.version>
     <maven.dependency.version>3.0.0</maven.dependency.version>
     <dbcp.version>2.2.0</dbcp.version>
+    <mysql.version>5.1.38</mysql.version>
+    <dubbo.learn.version>0.0.1-SNAPSHOT</dubbo.learn.version>
   </properties>
   <dependencies>
     <dependency>
@@ -210,6 +212,39 @@
         <version>${dbcp.version}</version>
       </dependency>
 
+      <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>dubbo.learn.parent</groupId>
+        <artifactId>dubbo-learn-entity</artifactId>
+        <version>${dubbo.learn.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>dubbo.learn.parent</groupId>
+        <artifactId>dubbo-learn-provider</artifactId>
+        <version>${dubbo.learn.version}</version>
+      </dependency>
+
+
+      <dependency>
+        <groupId>dubbo.learn.parent</groupId>
+        <artifactId>dubbo-learn-api</artifactId>
+        <version>${dubbo.learn.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>dubbo.learn.parent</groupId>
+        <artifactId>dubbo-learn-provider</artifactId>
+        <version>${dubbo.learn.version}</version>
+      </dependency>
+
+
     </dependencies>
 
 
@@ -241,24 +276,24 @@
     </plugins>
 
 
-    <pluginManagement>
+    <!--<pluginManagement>-->
 
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>${maven.jar.version}</version>
-        </plugin>
+      <!--<plugins>-->
+        <!--<plugin>-->
+          <!--<groupId>org.apache.maven.plugins</groupId>-->
+          <!--<artifactId>maven-jar-plugin</artifactId>-->
+          <!--<version>${maven.jar.version}</version>-->
+        <!--</plugin>-->
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <version>${maven.dependency.version}</version>
-        </plugin>
+        <!--<plugin>-->
+          <!--<groupId>org.apache.maven.plugins</groupId>-->
+          <!--<artifactId>maven-dependency-plugin</artifactId>-->
+          <!--<version>${maven.dependency.version}</version>-->
+        <!--</plugin>-->
 
-      </plugins>
+      <!--</plugins>-->
 
-    </pluginManagement>
+    <!--</pluginManagement>-->
 
 
 

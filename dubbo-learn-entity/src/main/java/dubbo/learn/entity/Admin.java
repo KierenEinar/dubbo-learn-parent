@@ -11,6 +11,7 @@ public class Admin implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "admin_id")
     private Long id;
 
     public Long getId() {

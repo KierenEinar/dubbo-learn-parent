@@ -1,2 +1,4 @@
+dubbo/learn/api/modules/admin/AdminService.class
 dubbo/learn/api/modules/user/UserService.class
 dubbo/learn/api/modules/constant/Api.class
+dubbo/learn/api/modules/base/BaseService.class

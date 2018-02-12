@@ -18,4 +18,5 @@
 
         <dubbo:service interface="dubbo.learn.api.modules.user.UserService" ref="userService"/>
 
+        <dubbo:service interface="dubbo.learn.api.modules.admin.AdminService" ref="adminService"/>
 </beans>

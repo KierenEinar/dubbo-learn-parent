@@ -1,5 +1,6 @@
 package dubbo.learn.api.modules.user;
 
+import dubbo.learn.api.modules.base.BaseService;
 import dubbo.learn.entity.User;
 import java.util.List;
 
@@ -7,7 +8,6 @@ import java.util.List;
  * Hello world!
  *
  */
-public interface UserService {
-    List<User> findAll ();
-    User findOne (Long uid);
+public interface UserService extends BaseService<Long, User> {
+
 }
