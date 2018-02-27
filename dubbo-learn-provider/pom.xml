@@ -25,6 +25,13 @@
       <artifactId>dubbo-learn-repository</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
+
+    <dependency>
+      <groupId>dubbo.learn.parent</groupId>
+      <artifactId>dubbo-learn-redis-repository</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
   </dependencies>
   
   <build>

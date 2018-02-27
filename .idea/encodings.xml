@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/dubbo-learn-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo-learn-entity" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo-learn-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo-learn-redis-repository" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo-learn-repository" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo-learn-web" charset="UTF-8" />
   </component>
