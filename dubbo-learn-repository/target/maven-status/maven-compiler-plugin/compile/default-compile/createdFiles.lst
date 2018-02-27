@@ -1,4 +1,5 @@
 dubbo/learn/repository/admin/AdminRepository.class
-dubbo/learn/repository/App.class
-dubbo/learn/repository/base/BaseRepository.class
+dubbo/learn/App.class
+dubbo/learn/mapper/AdminMapper.class
 dubbo/learn/repository/base/AbstractRepository.class
+dubbo/learn/repository/base/BaseRepository.class

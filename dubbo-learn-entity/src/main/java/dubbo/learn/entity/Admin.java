@@ -12,23 +12,14 @@ public class Admin implements java.io.Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "admin_id")
-    private Long id;
+    private Long adminId;
 
-    public Long getId() {
-        return id;
+    public Long getAdminId() {
+        return adminId;
     }
 
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "id=" + id +
-                ", alias='" + alias + '\'' +
-                ", mobile='" + mobile + '\'' +
-                '}';
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setAdminId(Long adminId) {
+        this.adminId = adminId;
     }
 
     public String getAlias() {

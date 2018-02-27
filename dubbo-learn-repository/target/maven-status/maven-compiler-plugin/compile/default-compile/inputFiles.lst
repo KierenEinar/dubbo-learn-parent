@@ -1,4 +1,5 @@
-/Users/kieren/dubbo-learn-parent/dubbo-learn-repository/src/main/java/dubbo/learn/repository/App.java
+/Users/kieren/dubbo-learn-parent/dubbo-learn-repository/src/main/java/dubbo/learn/mapper/AdminMapper.java
+/Users/kieren/dubbo-learn-parent/dubbo-learn-repository/src/main/java/dubbo/learn/App.java
 /Users/kieren/dubbo-learn-parent/dubbo-learn-repository/src/main/java/dubbo/learn/repository/base/BaseRepository.java
 /Users/kieren/dubbo-learn-parent/dubbo-learn-repository/src/main/java/dubbo/learn/repository/base/AbstractRepository.java
 /Users/kieren/dubbo-learn-parent/dubbo-learn-repository/src/main/java/dubbo/learn/repository/admin/AdminRepository.java
