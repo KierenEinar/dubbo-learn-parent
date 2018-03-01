@@ -32,16 +32,12 @@ public class AdminServiceImpl implements AdminService {
         return adminRepository.findAll();
     }
 
-//    @Override
-//    public Admin findOne(Long id) {
-//        return adminRepository.findOne(id);
-//    }
-
     @Override
     @Transactional(readOnly = true, transactionManager = "dataSourceTransactionManager")
     public Admin findOne(Long id) {
         System.out.println("设置redis");
         redisService.set("bar", "设置redis"+id);
+        System.out.println("get redis =>" + redisService.get("bar"));
         return adminMapper.findOne(id);
     }
 

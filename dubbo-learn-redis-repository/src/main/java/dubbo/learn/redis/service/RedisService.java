@@ -13,10 +13,10 @@ public class RedisService {
     @Autowired
     RedisTemplate redisTemplate;
 
-
     public void set (String key, String value) {
         redisTemplate.opsForValue().set(key, value);
     }
 
+    public Object get (String key) { return redisTemplate.opsForValue().get(key); }
 
 }

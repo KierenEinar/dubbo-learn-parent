@@ -24,4 +24,10 @@ public class UserApiController {
         return userService.findOne(uid);
     }
 
+    @GetMapping("/users/count")
+    public Long count () {
+        return userService.count();
+    }
+
+
 }

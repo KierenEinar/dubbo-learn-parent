@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dubbo-learn-api" />
         <module name="dubbo-learn-entity" />
+        <module name="dubbo-learn-mongo-repository" />
         <module name="dubbo-learn-provider" />
         <module name="dubbo-learn-redis-repository" />
         <module name="dubbo-learn-repository" />
@@ -17,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="dubbo-learn-api" target="1.8" />
       <module name="dubbo-learn-entity" target="1.8" />
+      <module name="dubbo-learn-mongo-repository" target="1.8" />
       <module name="dubbo-learn-parent" target="1.8" />
       <module name="dubbo-learn-provider" target="1.8" />
       <module name="dubbo-learn-redis-repository" target="1.8" />

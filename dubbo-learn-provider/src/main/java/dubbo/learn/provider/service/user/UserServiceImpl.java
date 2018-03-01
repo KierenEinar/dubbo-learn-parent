@@ -1,7 +1,10 @@
 package dubbo.learn.provider.service.user;
 
 import dubbo.learn.api.modules.user.UserService;
+import dubbo.learn.collection.Users;
 import dubbo.learn.entity.User;
+import dubbo.learn.mongo.MgUserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +16,10 @@ import java.util.List;
  */
 @Service("userService")
 public class UserServiceImpl implements UserService{
+
+    @Autowired
+    private MgUserRepository mgUserRepository;
+
     public List<User> findAll() {
         User user1 = new User();
         user1.setName("kieren");
@@ -30,4 +37,8 @@ public class UserServiceImpl implements UserService{
         return user1;
     }
 
+    @Override
+    public Long count() {
+        return mgUserRepository.count();
+    }
 }
