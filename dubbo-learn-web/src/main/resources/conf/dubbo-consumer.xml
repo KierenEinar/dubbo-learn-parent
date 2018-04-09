@@ -16,4 +16,6 @@
 
     <dubbo:reference interface="dubbo.learn.api.modules.admin.AdminService" id="adminService"/>
 
+    <dubbo:reference interface="dubbo.learn.api.modules.order.OrderService" id="orderService"/>
+
 </beans>

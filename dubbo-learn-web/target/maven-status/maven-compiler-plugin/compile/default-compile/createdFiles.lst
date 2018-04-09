@@ -1,2 +1,5 @@
+dubbo/learn/web/service/order/impl/OrderServiceImpl.class
+dubbo/learn/web/controller/api/OrderApiController.class
 dubbo/learn/web/controller/api/UserApiController.class
 dubbo/learn/web/controller/api/AdminApiController.class
+dubbo/learn/web/service/order/OrderService.class

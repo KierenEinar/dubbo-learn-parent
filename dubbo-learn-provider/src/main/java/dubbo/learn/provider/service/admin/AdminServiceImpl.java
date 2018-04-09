@@ -42,4 +42,9 @@ public class AdminServiceImpl implements AdminService {
     }
 
 
+    @Override
+    @Transactional(readOnly = false, transactionManager = "dataSourceTransactionManager")
+    public int updateOne(Long id, String alias) {
+        return adminMapper.updateOne(id, alias);
+    }
 }

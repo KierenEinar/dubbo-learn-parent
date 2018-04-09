@@ -321,6 +321,8 @@
     <module>dubbo-learn-repository</module>
     <module>dubbo-learn-redis-repository</module>
     <module>dubbo-learn-mongo-repository</module>
+    <module>dubbo-learn-order-repository</module>
+    <module>dubbo-learn-order-provider</module>
   </modules>
 
   <build>

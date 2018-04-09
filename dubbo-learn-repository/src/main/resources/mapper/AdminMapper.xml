@@ -8,5 +8,7 @@
         SELECT * FROM intbee_admins where admin_id = #{id};
     </select>
 
-
+    <update id="updateOne">
+        UPDATE  intbee_admins SET alias = #{alias} where admin_id = #{id};
+    </update>
 </mapper>
